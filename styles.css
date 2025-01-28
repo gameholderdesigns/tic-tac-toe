@@ -1,0 +1,125 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #f3f4f9, #cfd9e6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Container for the game */
+.container {
+    text-align: center;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    width: 350px;
+    position: relative;  /* Ensure the GIF appears above the board */
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* The game board */
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.cell {
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    background-color: #f1f1f1;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Hover effect for cells */
+.cell:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.05);
+}
+
+.cell.X {
+    color: #ff5733; /* Red-orange for X */
+}
+
+.cell.O {
+    color: #33b5ff; /* Blue for O */
+}
+
+/* Winning GIF Overlay */
+.winning-gif {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    z-index: 10;
+}
+
+.winning-gif img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Restart Button */
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Animation when restarting */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.container {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+        padding: 10px;
+    }
+
+    .game-board {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+
+    .cell {
+        font-size: 1.8rem;
+        width: 70px;
+        height: 70px;
+    }
+}
