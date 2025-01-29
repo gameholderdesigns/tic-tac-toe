@@ -1,13 +1,17 @@
 /* General Styles */
 body {
-    font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #f3f4f9, #cfd9e6);
+    background: linear-gradient(to bottom, #00FFFF, #008B8B); /* Aqua to Dark Cyan */
+    color: #fff; /* White text for better visibility */
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
 }
+
 
 /* Container for the game */
 .container {
